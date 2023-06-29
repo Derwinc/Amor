@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-compatible" content="IE=edge">
+        <meta name="viewport" content="width=device=width, initial-scale=1.0">
+        <title>Welcome My Lady</title>
+        <link rel="stylesheet" href="styles.css">
+
+        <style>
+            img {
+                transition: transform 0.2s;
+            }
+        
+            img:hover {
+                transform: scale(1.1);
+            }
+        
+            @keyframes fallRotate {
+                from {
+                    transform: translateY(0) rotate(0deg);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateY(500px) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        
+            .clicked {
+                animation: fallRotate 2s;
+            }
+        </style>
+    </head>
+    <body>
+        <style>
+            body {
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+        </style>
+        
+        <h1>
+            Hola amor🥰
+        </h1>
+        
+        <h3> 
+            Mi amor, bienvenida al lugar donde me puedes sentir cerca, donde puedes sentir que estoy junto a tí, 
+            se que no es fácil nada de lo que hemos vivido, y últimamente no hemos podido estar juntos, sin embargo, 
+            no podemos darnos por vencido, este amor tiene la fuerza de prevalecer en los momentos más dificiles y 
+            oscuros, ya nos hemos demostrado que nos amamos con todas nuestras fuerzas, y que no importa quien nos 
+            quiera enfrente, tenemos la capacidad de enfrentar lo que sea juntos mi reina, no tengo miedo de amarte,  
+            ni de demostrarte cuando te amo, gracias por cada momento compartido a mi lado mi lady, bueno, te dejo 
+            para que disfrutes lo que este lugar tiene para ti.
+        </h3>
+        
+        <hr>
+        
+        <a href="texto1.html">
+            <div class="box">
+                <img id="myImage1" src="Foto1.jpg" alt="Una foto" width="150px" height="205px">
+            </div>
+        </a>
+        
+        <a href="texto2.html">
+            <div class="box">
+                <img id="myImage2" src="Foto2.jpg" alt="Una foto" width="150px" height="205px">
+            </div>
+        </a>
+
+        <a href="texto3.html">
+            <div class="box">
+                <img id="myImage3" src="Foto3.jpg" alt="Una foto" width="150px" height="205px">
+            </div>
+        </a>
+
+        <a href="Música.html">
+            <div class="box">
+                <img id="sonic" src="musica.jpg" alt="Una foto" width="150px" height="205px">
+            </div>
+        </a>
+        
+        <div style="position: fixed; bottom: 0; right: 0;">
+            <pre>
+                <audio autoplay controls>
+                    <source src="Sweater.mp3" type="audio/mpeg">
+                </audio>
+            </pre>
+        </div>
+        
+        <script>
+        // Obtener una referencia al elemento de imagen
+        var img1 = document.getElementById("myImage1");
+        var img2 = document.getElementById("myImage2");
+        var img3 = document.getElementById("myImage3");
+        var music = document.getElementById("sonic");
+        
+        // Agregar un controlador de eventos para el evento "click"
+        img1.addEventListener("click", handleClick);
+        img2.addEventListener("click", handleClick);
+        img3.addEventListener("click", handleClick);
+        music.addEventListener("click", handleClick);
+    
+        function handleClick(event) {
+        // Evitar que el enlace se siga inmediatamente
+        event.preventDefault();
+
+        // Agregar la clase "clicked" al elemento de imagen
+        this.classList.add("clicked");
+
+        // Obtener una referencia al elemento <a> que contiene la imagen
+        var link = this.parentElement.parentElement;
+
+        // Redirigir al usuario después de un breve retraso
+        setTimeout(() => {
+            window.location.href = link.href;
+        }, 1500);
+    }
+    </script>
+    </body>
+</html>
